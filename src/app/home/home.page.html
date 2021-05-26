@@ -1,0 +1,95 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <div #header class="header">
+    <ion-grid>
+      <ion-row class="ion-text-left ion-align-items-center">
+        <ion-col size="2">
+          <img src="/assets/icon/netflix2.png">
+        </ion-col>
+        <ion-col size="10">
+          <ion-row>
+            <ion-col size="4"><span>Séries</span></ion-col>
+
+            <ion-col size="4">Filmes</ion-col>
+
+            <ion-col size="4">Minha Lista</ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="main-poster">
+    <div class="gradient-top"></div>
+
+    <div class="gradient-bottom">
+      <div class="title">
+        <img id="im2" src="/assets/icon/title.webp">
+      </div>
+    </div>
+  </div>
+  <ion-grid class="actions">
+    <ion-row>
+      <ion-col size="4">
+        <ion-button color="dark" expand="block" fill="clear">
+          <div>
+            <ion-icon name="add-outline"></ion-icon>
+            <ion-label>Minha lista</ion-label>
+          </div>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-button expand="block" color="dark">
+          <ion-icon slot="start" name="play"></ion-icon>
+          Assistir
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-button color="dark" expand="block" fill="clear">
+          <div>
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <ion-label>Saiba mais</ion-label>
+          </div>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="content ion-padding">
+    <div class="title ion-margin-vertical">
+      <span>Prévias</span>
+    </div>
+
+    <ion-slides class="stories" [options]="slidesOptions">
+      <ion-slide *ngFor="let story of stories">
+        <ion-img [src]="story.Poster"></ion-img>
+      </ion-slide>
+    </ion-slides>
+
+    <div class="title ion-margin-vertical">
+      <span>Minha lista</span>
+    </div>
+
+    <ion-slides class="lists" [options]="slidesOptions">
+      <ion-slide *ngFor="let movie of movies">
+        <ion-img [src]="movie.Poster"></ion-img>
+      </ion-slide>
+    </ion-slides>
+
+    <div class="title ion-margin-vertical">
+      <span>Continuar assitindo</span>
+    </div>
+
+    <ion-slides class="lists" [options]="slidesOptions">
+      <ion-slide *ngFor="let movie of movies">
+        <ion-img [src]="movie.Poster"></ion-img>
+      </ion-slide>
+    </ion-slides>
+    <!--<ion-slides class="stories" [options]="slidesOptions">
+      <ion-slide *ngFor="let story of stories">
+        <ion-img [src]="story.Poster"></ion-img>
+      </ion-slide>
+    </ion-slides>-->
+  </div>
+</ion-content>

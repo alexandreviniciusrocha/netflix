@@ -1,0 +1,102 @@
+*{
+    background-color: black;
+    color: white;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transition: background-color 0.3s;
+
+    &.dark{
+        background-color: #000;
+    }
+}
+
+img{
+    width: 40px;
+}
+
+#im2{
+    position:relative;
+    width: 300px;
+    height: 100px;
+    top: 320px;
+    left: 70px;
+}
+
+.main-poster{
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-image: url('https://occ-0-2828-1356.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVR0eOZvgNpJBQnsTMCaFAM7vmg3BOV9JjtpADfCjKF9liLtHhjOnwUOAvRunsAA4ciTwOCLxbg5Cd2Bfxl6fX2J6dVY.webp?r=47a');
+    background-size: cover;
+    background-position: center;
+
+    .gradient{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 60vh;
+        background-image: url('/assets/icon/gradient.png');
+        background-size: cover;
+
+        &.top{
+            top:0;
+            transform: rotate(180deg);
+        }
+
+        &.bottom{
+            bottom: 0;
+        }
+    }
+}
+
+.actions{
+    margin-top: -30px;
+    ion-button{
+        ion-icon{
+            ion-label{
+                display: block;
+            }
+        }
+    }
+}
+
+.content{
+    .title{
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .stories{
+        ion-slide{
+            height: 120px;
+
+            ion-img{
+                width: 100px;
+                height: 100px;
+            }
+
+            ion-img::part(image){
+                border-radius: 50%;
+                border: 1px solid black;
+            }
+        }
+    }
+
+    .lists{
+        ion-slide{
+            height: 150px;
+
+            ion-img::part(image){
+                height: 100%;
+            }
+        }
+    }
+}
+
+
